@@ -1,0 +1,29 @@
+<app-model #childref></app-model> <!--child selector-->  
+
+<div class="container">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openform()">ADD</button>
+    <div class="row col-md-12 mg auto ">
+        <table class="table table-responsive table-centered table-bordered">
+            <thead>
+                <tr class="bg-primary text-center">
+                    <th>S.No</th>
+                    <th>NAME</th>
+                    <th>MARKS</th>
+                    <th>ADD</th>
+                    <th>DELETE  </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of mydata index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.marks}}</td>
+                    <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="EditForm(x)">EDIT</button></td>
+                    <td><button class="btn btn-primary" (click)="delete(x)">DELETE</button></td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
